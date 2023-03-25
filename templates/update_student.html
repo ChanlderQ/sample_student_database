@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student</title>
+    <!-- Add some basic styling for the form -->
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label, input {
+            margin-bottom: 1rem;
+        }
+        input[type="submit"] {
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Student</h1>
+    <form action="{{ url_for('update_student') }}" method="POST">
+        <label for="id">ID:</label>
+        <input type="number" id="id" name="id"  required>
+
+        <label for="first_name">first_name:</label>
+        <input type="text" id="first_name" name="first_name"  required>
+
+        <label for="last_name">last_name:</label>
+        <input type="text" id="last_name" name="last_name" required>
+
+        <label for="dob">dob:</label>
+        <input type="text" id="dob" name="dob"  required>
+
+        <label for="amount_due">amount_due:</label>
+        <input type="number" id="amount_due" name="amount_due" min="0" required>
+
+        <input type="submit" value="Update Student">
+    </form>
+    <p><a href="{{ url_for('index') }}">Back to Students List</a></p>
+</body>
+</html>
